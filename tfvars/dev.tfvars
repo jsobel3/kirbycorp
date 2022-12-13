@@ -1,11 +1,11 @@
 #dev environment variables
 
-resource "azurerm_resource_group" "kcdemo" {
-  name     = "kcdemo"
+resource "azurerm_resource_group" "kcDemoRG" {
+  name     = "kcDemoRG"
   location = "SouthCentralUS"
 }
 
-vnet_name          = "vnet-platfrms-spoke-dev-scus-001"
+vnet_name          = "vnet-dev-scus-001"
 address_space      = ["10.0.0.0/20"]
 env                = "dev"
 
@@ -32,10 +32,3 @@ subnets = {
   }
 }
 
-resource "azurerm_container_registry" "acr" {
-  name                = "containerRegistry1"
-  resource_group_name = azurerm_resource_group.kcdemo.name
-  location            = azurerm_resource_group.kcdemo.location
-  sku                 = "Standard"
-  admin_enabled       = false
-}

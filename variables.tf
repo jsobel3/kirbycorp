@@ -22,6 +22,6 @@ variable "address_space" {
   type = list(string)
 }
 
-variable "tags" {
+/*variable "tags" {
   type = map(string)
-}
+}*/
